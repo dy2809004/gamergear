@@ -1,0 +1,76 @@
+.NavBar{
+    height: 7.5vh;
+    width: 100%;
+    padding: 0 2%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo{
+    height: 7vh;
+    width: 11vw;
+    padding: 0.1vh 0; 
+}
+.search_sec{
+    height: 4.25vh;
+    width: 40vw;
+    padding: 0.15vh 0.5vw;
+    display: flex;
+    background-color: #e2e0e0;
+}
+.search_sec input{
+    height: 4vh;
+    width: 100%;
+    border: 0px transparent solid;
+    outline: none;
+    background-color: transparent;
+}
+.search_btn{
+    width: 2.25vw;
+    padding: 0 0.35vw;
+    border: 0px transparent none ;
+    background-color: transparent;
+}
+.search_icon {
+    height: 100%;
+    width: 100%;
+    color: #008E97;
+}
+.navbar_right{
+    display: flex;
+}
+.cart_btn{
+    height: 5vh;
+    width: 2.5vw;
+    margin-right: 1vw;
+    background-color: transparent;
+    border: 0px black solid;
+    border-radius: 50%;
+}
+.cart_icon {
+    padding: 0.2vh 0.3vw;
+    height: 100%;
+    width: 100%;
+    color: #008E97;
+}
+.profile_sec{
+    display: flex;
+    align-items: center;
+}
+.profile_photo{
+    height: 5vh;
+    width: 2.5vw;
+    background-color: transparent;
+    border: 0px black solid;
+    border-radius: 50%;
+}
+.profile_icon{
+    height: 100%;
+    width: 100%;
+    padding: 0.3vh 0.4vw;
+    color: #008E97;
+}
+.profile_name{
+    margin-left: 0.5vw;
+    font-size: 1.75vh;
+}
