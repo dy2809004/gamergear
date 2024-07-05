@@ -14,7 +14,6 @@ function LoginPage() {
         event.preventDefault();
         try {
             const userCredential = await signInWithEmailAndPassword(auth, email, password);
-            console.log("Logged in as:", userCredential.user);
             navigate('/HomePage'); // Redirect to dashboard upon successful login
         } catch (error) {
             console.error("Error logging in:", error);
@@ -26,10 +25,10 @@ function LoginPage() {
         const provider = new GoogleAuthProvider();
         try {
             const result = await signInWithPopup(auth, provider);
-            console.log("Logged in with Google as:", result.user);
             navigate('/HomePage'); // Redirect to dashboard upon successful login with Google
         } catch (error) {
             console.error("Error logging in with Google:", error);
+            
             alert(error.message); // Show alert with error message
         }
     };
