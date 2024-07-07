@@ -1,0 +1,93 @@
+.FreshVegetables{
+    padding: 0 5vw;
+    margin: 3vh 0;
+}
+.FreshVegetables_title{
+    font-size: 3vh;
+    margin-bottom: 3vh;
+}
+.Card_Products{
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.card{
+    width: 21rem;
+    margin-bottom: 3vh;
+    padding: 2vh 1vw ;
+    height: initial;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.card_product_image{
+    height: 22.5vh;
+    background-color: #707070;
+    margin-bottom: 1.5vh;
+}
+.card_product_category{
+    color: #707070;
+    font-size: 1.5vh;
+}
+.card_product_name{
+    font-size: 2.5vh;
+    line-height: 3vh;
+    margin-bottom: 1.5vh;
+}
+.card_product_real_price{
+    text-decoration: line-through;
+    color: #707070;
+}
+.card_product_discount_price{
+    font-size: 2vh;
+    margin-bottom: 1.5vh;
+}
+.card_section_3{
+    display: flex;
+    justify-content: space-between;
+}
+.product_quantity{
+    width: 9rem;
+    height: 5vh;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 50px;
+}
+.quantity_btn{
+    height: 100%;
+    width: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #E8E8E8;
+    border: 0px transparent solid;
+    font-size: 2.5vh;
+}
+.quantity_btn_remove{
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+}
+.quantity_choosen{
+    background-color: #FCFCFD;
+    height: 100%;
+    text-align: center;
+    width: 3rem;
+    border: 0px transparent solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.quantity_btn_add{
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+.add_to_cart_btn{
+    border: 0px transparent solid;
+    background-color: #F47B34;
+    color: white;
+    border-radius: 50px;
+    font-size: 1.75vh;
+    padding: 0 0.75vw;
+}

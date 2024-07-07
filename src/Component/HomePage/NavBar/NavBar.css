@@ -34,7 +34,7 @@
 .search_icon {
     height: 100%;
     width: 100%;
-    color: #008E97;
+    color: #F47B34;
 }
 .navbar_right{
     display: flex;
@@ -51,7 +51,7 @@
     padding: 0.2vh 0.3vw;
     height: 100%;
     width: 100%;
-    color: #008E97;
+    color: #F47B34;
 }
 .profile_sec{
     display: flex;
@@ -68,7 +68,7 @@
     height: 100%;
     width: 100%;
     padding: 0.3vh 0.4vw;
-    color: #008E97;
+    color: #F47B34;
 }
 .profile_name{
     margin-left: 0.5vw;
