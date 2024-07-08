@@ -13,15 +13,27 @@
     flex-wrap: wrap;
     justify-content: space-between;
 }
+.linkto{
+    text-decoration: none;
+}
 .card{
-    width: 21rem;
+    width: 20.5rem;
     margin-bottom: 3vh;
     padding: 2vh 1vw ;
     height: initial;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    transition: transform 0.3s ease-in-out;
 }
+
+.card:not(:hover) {
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
 .card_product_image{
     height: 22.5vh;
     background-color: #707070;

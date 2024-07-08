@@ -6,7 +6,6 @@ import { collection, addDoc } from "firebase/firestore";
 
 const Admin = () => {
   const [formData, setFormData] = useState({
-    id: '',
     name: '',
     category: '',
     real_price: '',
@@ -25,7 +24,6 @@ const Admin = () => {
       console.log("Document written with ID: ", docRef.id);
       // Reset form
       setFormData({
-        id: '',
         name: '',
         category: '',
         real_price: '',
@@ -39,7 +37,6 @@ const Admin = () => {
   return (
     <div className="Admin">
         <form onSubmit={handleSubmit}>
-            <label>id: <input type="text" name="id" value={formData.id} onChange={handleChange} /> </label><br />
             <label>name: <input type="text" name="name" value={formData.name} onChange={handleChange} /> </label><br />
             <label>category: <input type="text" name="category" value={formData.category} onChange={handleChange} /> </label><br />
             <label>real_price: <input type="text" name="real_price" value={formData.real_price} onChange={handleChange} /> </label><br />
