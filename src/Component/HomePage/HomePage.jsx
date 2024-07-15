@@ -9,7 +9,7 @@ function HomePage() {
             <NavBar />
             <Poster />
             <FreshVegetables />
-        </>
+        </> 
     )
 }
 

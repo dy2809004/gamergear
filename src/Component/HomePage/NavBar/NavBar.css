@@ -8,7 +8,7 @@
 }
 .logo{
     height: 7vh;
-    width: 11vw;
+    width: 13rem;
     padding: 0.1vh 0; 
 }
 .search_sec{
@@ -26,7 +26,7 @@
     background-color: transparent;
 }
 .search_btn{
-    width: 2.25vw;
+    width: 2.5rem;
     padding: 0 0.35vw;
     border: 0px transparent none ;
     background-color: transparent;
@@ -41,7 +41,7 @@
 }
 .cart_btn{
     height: 5vh;
-    width: 2.5vw;
+    width: 2.85rem;
     margin-right: 1vw;
     background-color: transparent;
     border: 0px black solid;
@@ -59,18 +59,99 @@
 }
 .profile_photo{
     height: 5vh;
-    width: 2.5vw;
+    width: 2.85rem;
     background-color: transparent;
     border: 0px black solid;
     border-radius: 50%;
+    background-color: cadetblue;
+    overflow: hidden;
 }
 .profile_icon{
-    height: 100%;
-    width: 100%;
-    padding: 0.3vh 0.4vw;
-    color: #F47B34;
+    
+
 }
 .profile_name{
     margin-left: 0.5vw;
     font-size: 1.75vh;
+}
+
+@media only screen and (max-width: 800px) {
+    .NavBar{
+        height: 7.5vh;
+        width: 100%;
+        padding: 0 2%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .logo{
+        height: 6vh;
+        width: 11rem;
+        padding: 0.1vh 0; 
+    }
+    .search_sec{
+        height: 3.5vh;
+        width: fit-content;
+        padding: 0.15vh 0.5vw;
+        display: flex;
+        background-color: white;
+    }
+    .search_sec input{
+        height: 4vh;
+        width: 100%;
+        border: 0px transparent solid;
+        outline: none;
+        background-color: transparent;
+        display: none;
+    }
+    .search_btn{
+        width: 2.5rem;
+        padding: 0 0.35vw;
+        border: 0px transparent none ;
+        background-color: transparent;
+    }
+    .search_icon {
+        height: 100%;
+        width: 100%;
+        color: #F47B34;
+    }
+    .navbar_right{
+        display: flex;
+    }
+    .cart_btn{
+        height: 5vh;
+        width: 2.2rem;
+        margin-right: 1vw;
+        background-color: transparent;
+        border: 0px black solid;
+        border-radius: 50%;
+    }
+    .cart_icon {
+        padding: 0.2vh 0.3vw;
+        height: 100%;
+        width: 100%;
+        color: #F47B34;
+    }
+    .profile_sec{
+        display: flex;
+        align-items: center;
+    }
+    .profile_photo{
+        height: 5vh;
+        width: 2.2rem;
+        background-color: transparent;
+        border: 0px black solid;
+        border-radius: 50%;
+    }
+    .profile_icon{
+        height: 100%;
+        width: 100%;
+        padding: 0.3vh 0.4vw;
+        color: #F47B34;
+    }
+    .profile_name{
+        margin-left: 0.5vw;
+        font-size: 1.75vh;
+        display: none;
+    }
 }
