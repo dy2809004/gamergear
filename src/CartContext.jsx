@@ -1,25 +1,22 @@
 import React, { createContext, useState } from 'react';
 
-const CartContext = createContext();
+export const CartContext = createContext();
 
-const CartProvider = ({ children }) => {
+export const CartProvider = ({ children }) => {
     const [cart, setCart] = useState([]);
+    const [finalPrice, setFinalPrice] = useState(0);
 
     const updateQuantity = (id, quantity) => {
-        if (quantity > 0) {
-            setCart(cart.map(item =>
-                item.id === id ? { ...item, quantity: quantity } : item
-            ));
-        } else {
-            setCart(cart.filter(item => item.id !== id));
-        }
+        setCart(prevCart => 
+            prevCart.map(item => 
+                item.id === id ? { ...item, quantity } : item
+            )
+        );
     };
 
     return (
-        <CartContext.Provider value={{ cart, setCart, updateQuantity }}>
+        <CartContext.Provider value={{ cart, setCart, updateQuantity, finalPrice, setFinalPrice }}>
             {children}
         </CartContext.Provider>
     );
 };
-
-export { CartContext, CartProvider };

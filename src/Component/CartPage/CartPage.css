@@ -4,15 +4,11 @@
     flex-wrap: wrap;
     justify-content: space-between;
 }
-.cartSummary{
-    margin-right: 2.3rem;
-    height: 50rem;
-    flex: 1;
-    background-color: red;
-}
 .cart-table {
     margin-left: 2.3rem;
     margin-right: 2.3rem;
+    border: 1px #F4F4F4 solid;
+    height: fit-content;
     flex: 3;
 }
 
@@ -40,9 +36,6 @@
 
 
 
-
-
-
 .bin-button {
     display: flex;
     flex-direction: column;
@@ -57,6 +50,7 @@
     transition-duration: 0.3s;
     position: relative;
     overflow: hidden;
+    transition: background-color 0.3s;
   }
   .bin-bottom {
     width: 15px;
@@ -71,9 +65,9 @@
   .bin-button:hover .bin-top {
     transform: rotate(45deg);
   }
-  /* .bin-button:hover {
+  .bin-button:hover {
     background-color: rgb(255, 0, 0);
-  } */
+  }
   .bin-button:active {
     transform: scale(0.9);
   }
@@ -99,3 +93,81 @@
     }
   }
   
+
+  
+.cartSummary{
+  margin-right: 2.3rem;
+  height: fit-content;
+  flex: 1;
+  border: 1px #F4F4F4 solid;
+}
+.cartSummary_header{
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #F4F4F4;
+  text-align: center;
+  font-weight: bold;
+}
+.cartSummary_total{
+  padding: 30px;
+  height: 7.25rem;
+  font-size: 1.6rem;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+.cartSummary_total_title{
+  color: #707070;
+}
+
+
+
+.link_payment{
+  text-decoration: none;
+}
+.btn {
+  border: none;
+  width: 20em;
+  height: 3.5em;
+  border-radius: 3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  background: #1C1A1C;
+  margin: 0 auto 4vh auto;
+  cursor: pointer;
+  transition: all 450ms ease-in-out;
+}
+
+.sparkle {
+  fill: #AAAAAA;
+  transition: all 800ms ease;
+}
+
+.text {
+  font-weight: 600;
+  color: #AAAAAA;
+  font-size: medium;
+}
+
+.btn:hover {
+  background: linear-gradient(0deg,#F47B34,#F47B34);
+  box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.4),
+  inset 0px -4px 0px 0px rgba(0, 0, 0, 0.2),
+  0px 0px 0px 4px rgba(255, 255, 255, 0.2),
+  0px 0px 0px 0px #9917FF;
+  transform: translateY(-2px);
+}
+
+.btn:hover .text {
+  color: white;
+}
+
+.btn:hover .sparkle {
+  fill: white;
+  transform: scale(1.2);
+} 

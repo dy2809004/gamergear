@@ -1,0 +1,18 @@
+.payment-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+.card_payment{
+    height: 375px;
+    width: 375px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+}
+.qr_code{
+}  
+  

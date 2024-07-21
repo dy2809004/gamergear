@@ -1,7 +1,7 @@
 .NavBar{
-    height: 7.5vh;
+    height: 8.5vh;
     width: 100%;
-    padding: 0 2%;
+    padding: 2vh 2%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -58,8 +58,8 @@
     align-items: center;
 }
 .profile_photo{
-    height: 5vh;
-    width: 2.85rem;
+    height: 3rem;
+    width: 3rem;
     background-color: transparent;
     border: 0px black solid;
     border-radius: 50%;

@@ -6,6 +6,7 @@ import SignUpPage from './Component/SignUp/SignUp';
 import HomePage from './Component/HomePage/HomePage';
 import Admin from './Component/AdminPage/Admin';
 import CartPage from './Component/CartPage/CartPage';
+import Payment from './Component/Payment/Payment';
 
 function App() {
     return (
@@ -18,6 +19,7 @@ function App() {
                     <Route path='SignUpPage/HomePage' element={<HomePage />} />
                     <Route path='/CartPage' element={<CartPage />} />
                     <Route path='/Admin' element={<Admin />} />
+                    <Route path='/Payment' element={<Payment />} />
                 </Routes>
             </BrowserRouter>
         </CartProvider>

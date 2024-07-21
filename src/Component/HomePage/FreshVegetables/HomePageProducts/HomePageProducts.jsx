@@ -41,7 +41,7 @@ const HomePageProducts = ({ product, onAddToCart, showNotification }) => {
 
     return (
         <div className={`card ${addedToCart ? 'added-to-cart' : ''}`}>
-            <div className="card_product_image"></div>
+            <div className="card_product_image"> <img src={product.imageUrl} alt={product.name} className="card_product_image" height="100%" width="100%" /> </div>
             <div className="card_section_1">
                 <div className="card_product_category">{product.category}</div>
                 <div className="card_product_name">{product.name} - Fresh From Farm</div>
