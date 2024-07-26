@@ -73,7 +73,7 @@ function CartPage() {
                                         <td>
                                             <div className="product_quantity">
                                                 <button className="quantity_btn quantity_btn_remove" onClick={() => handleRemove(item.id)}>-</button>
-                                                <input type='number' className="quantity_choosen" value={item.quantity} onChange={(e) => handleQuantityChange(item.id, e.target.value)} />
+                                                <input type='number' className="quantity_choosen" value={item.quantity} onChange={(e) => handleQuantityChange(item.id, e.target.value)} readOnly />
                                                 <button className="quantity_btn quantity_btn_add" onClick={() => handleAdd(item.id)}>+</button>
                                             </div>
                                         </td>

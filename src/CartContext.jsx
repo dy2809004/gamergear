@@ -7,8 +7,8 @@ export const CartProvider = ({ children }) => {
     const [finalPrice, setFinalPrice] = useState(0);
 
     const updateQuantity = (id, quantity) => {
-        setCart(prevCart => 
-            prevCart.map(item => 
+        setCart((prevCart) =>
+            prevCart.map((item) =>
                 item.id === id ? { ...item, quantity } : item
             )
         );
