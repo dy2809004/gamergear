@@ -1,45 +1,60 @@
-.LoginPage, .SignUpPage{
+.LoginPage, .SignUpPage {
     height: 100vh;
     width: 100%;
     font-size: 1.75vh;
     display: flex;
     justify-content: end;
     align-items: center;
-    background-image: url('../../Images/LoginPage_bg.jpg');
+    background-image: url('../../Images/Login_Page.webp');
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center; /* Center the background image */
 }
-.Login-Main{
+
+/* Container for the Login form */
+.Login-Main {
     height: fit-content;
-    width: 27.5%;
+    width: 30rem;
     padding: 0 2%;
     margin-right: 10%;
-    background-color: white;
+    background-color:black;
     border-radius: 20px;
+    color: white;
 }
-.Login_title{
+
+/* Styling for the login title */
+.Login_title {
     margin-top: 2.5vh;
     font-size: 3.5vh;
     text-align: center;
     font-weight: 500;
-    color: #008E97;
+    color: #ffffff;
 }
-.label_form{
+
+/* Label styling for form fields */
+.label_form {
     margin-top: 2.5vh;
     font-size: 2vh;
+    color: white;
 }
-.input_form{
+
+/* Input field styling */
+.input_form {
     width: 100%;
     margin-top: 1vh;
-    border-radius: 15px;
+    border-radius: 8px;
     padding: 0 0.75vw;
-    border: 1px #008E97 solid;
+    border: 1px #ffffff solid;
     height: 5vh;
 }
-.input_form:focus{
+
+/* Input focus styling */
+.input_form:focus {
     outline: none;
 }
-.submit_btn{
+
+/* Submit button styling */
+.submit_btn {
     margin-top: 4vh;
     height: 5vh;
     width: 100%;
@@ -48,37 +63,48 @@
     border: none;
     border-radius: 10px;
 }
-.or_sec{
+
+/* "Or" section styling */
+.or_sec {
     margin-top: 4vh;
     text-align: center;
-    color: #707070;
+    color: #ffffff;
 }
-.Google_SignIn{
+
+/* Google Sign-In button styling */
+.Google_SignIn {
     height: 6vh;
     border-radius: 10px;
     margin-top: 4vh;
     display: flex;
-    border: 1px #008E97 solid;
+    border: 1px #ffffff solid;
 }
-.Google_SignIn_part1{
+
+/* Google Sign-In part 1 styling */
+.Google_SignIn_part1 {
     width: 12vh;
     padding: 1vh 0;
-    border-right: 1px #008E97 solid;
+    border-right: 1px #ffffff solid;
 }
-.Google_SignIn_part2{
+
+/* Google Sign-In part 2 styling */
+.Google_SignIn_part2 {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.user_new_old{
+
+/* Styling for new or returning users */
+.user_new_old {
     text-align: center;
     margin-top: 4vh;
     margin-bottom: 4vh;
-    text-decoration: white underline;
-    color: black;
+    color: rgb(255, 255, 255);
 }
-.change_form{
-    color: #008E97;
+
+/* Link styling for form change */
+.change_form {
+    color: #ffffff;
     font-size: 2.25vh;
 }

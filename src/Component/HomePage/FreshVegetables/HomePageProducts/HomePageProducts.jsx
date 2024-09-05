@@ -59,11 +59,11 @@ const HomePageProducts = ({ product, showNotification }) => {
             </div>
             <div className="card_section_1">
                 <div className="card_product_category">{product.category}</div>
-                <div className="card_product_name">{product.name} - Fresh From Farm</div>
+                <div className="card_product_name">{product.name} </div>
             </div>
             <div className="card_section_2">
                 <div className="card_product_real_price">Rs. {product.real_price}</div>
-                <div className="card_product_discount_price">{product.discount_price} Rs/Kg</div>
+                <div className="card_product_discount_price">{product.discount_price}Rs</div>
             </div>
             <div className="card_section_3">
                 <div className="product_quantity">

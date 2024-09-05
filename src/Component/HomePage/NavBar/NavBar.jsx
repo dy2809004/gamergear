@@ -1,7 +1,7 @@
 import React from 'react'
 import './NavBar.css'
 import { Link } from 'react-router-dom';
-import F2F_Logo from '../../../Images/F2F_Logo.png'
+import GamerGear_Logo from '../../../Images/GamerGear_Logo.png'
 import { IoIosSearch } from "react-icons/io";
 import { FaShoppingCart } from "react-icons/fa";
 import Profile_Photo from '../../../Images/Profile_Photo.png'
@@ -11,11 +11,11 @@ function NavBar() {
     <div className="NavBar">
       <Link to={`/HomePage`}>
           <div className="logo">
-            <img src={F2F_Logo} alt="" height="100%" width="100%" />
+            <img src={GamerGear_Logo} alt="" height="100%" width="100%" />
           </div>
       </Link>
       <div className="search_sec">
-        <input type="text" placeholder='Search Vegetables here' />
+        <input type="text" placeholder='Search Equipments here' />
         <button className="search_btn">
           <IoIosSearch className="search_icon" />
         </button>
@@ -28,7 +28,7 @@ function NavBar() {
         </Link>
         <div className="profile_sec">
           <button className="profile_photo"> <img src={Profile_Photo} className="profile_icon" alt='P' height="100%" width="100%" /> </button>
-          <div className="profile_name">aryanmehta2649@gmail.com</div>
+          <div className="profile_name">dheerajyadav6155@gmail.com</div>
         </div>
       </div>
     </div>

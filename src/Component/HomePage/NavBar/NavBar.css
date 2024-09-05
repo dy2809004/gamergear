@@ -5,12 +5,15 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    background-color: #030303 ;
 }
-.logo{
-    height: 7vh;
-    width: 13rem;
-    padding: 0.1vh 0; 
+.logo img {
+    height: 60px; /* Adjust the size as needed */
+    width: auto;
+    flex: auto
 }
+
+
 .search_sec{
     height: 4.25vh;
     width: 40vw;
@@ -34,7 +37,7 @@
 .search_icon {
     height: 100%;
     width: 100%;
-    color: #F47B34;
+    color: #2c1102;
 }
 .navbar_right{
     display: flex;
@@ -48,10 +51,10 @@
     border-radius: 50%;
 }
 .cart_icon {
-    padding: 0.2vh 0.3vw;
+    padding-top: 0.5vw;
     height: 100%;
     width: 100%;
-    color: #F47B34;
+    color: #fcfcfc;
 }
 .profile_sec{
     display: flex;
@@ -73,6 +76,7 @@
 .profile_name{
     margin-left: 0.5vw;
     font-size: 1.75vh;
+    color: white;
 }
 
 @media only screen and (max-width: 800px) {

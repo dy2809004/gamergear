@@ -1,12 +1,14 @@
 /* FreshVegetables.css */
 .FreshVegetables {
     padding: 0 5vw;
-    margin: 3vh 0;
+    
+    background-color: #1A1214;
 }
 
 .FreshVegetables_title {
     font-size: 3vh;
     margin-bottom: 3vh;
+    color: white;
 }
 
 .Card_Products {
@@ -30,6 +32,8 @@
     flex-direction: column;
     justify-content: space-between;
     transition: transform 0.3s ease-in-out;
+    background: black;
+    color: white;
 }
 
 .card:hover {

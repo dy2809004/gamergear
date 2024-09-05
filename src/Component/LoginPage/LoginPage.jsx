@@ -4,20 +4,25 @@ import { Link, useNavigate } from 'react-router-dom';
 import google_icon from '../../Images/google.svg';
 import { auth } from '../../firebase';
 import { signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import Cookies from 'js-cookie'; // Import js-cookie
 
 function LoginPage() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const navigate = useNavigate(); // Initialize navigate function
+    const navigate = useNavigate();
 
     const handleLogin = async (event) => {
         event.preventDefault();
         try {
             const userCredential = await signInWithEmailAndPassword(auth, email, password);
-            navigate('/HomePage'); // Redirect to dashboard upon successful login
+            const user = userCredential.user;
+            
+            Cookies.set('userEmail', user.email, { expires: 7 }); 
+            
+            navigate('/HomePage'); 
         } catch (error) {
             console.error("Error logging in:", error);
-            alert(error.message); // Show alert with error message
+            alert(error.message);
         }
     };
 
@@ -25,11 +30,15 @@ function LoginPage() {
         const provider = new GoogleAuthProvider();
         try {
             const result = await signInWithPopup(auth, provider);
-            navigate('/HomePage'); // Redirect to dashboard upon successful login with Google
+            const user = result.user;
+            
+           
+            Cookies.set('userEmail', user.email, { expires: 7 });
+            
+            navigate('/HomePage'); 
         } catch (error) {
             console.error("Error logging in with Google:", error);
-            
-            alert(error.message); // Show alert with error message
+            alert(error.message);
         }
     };
 

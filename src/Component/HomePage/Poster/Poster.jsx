@@ -8,11 +8,11 @@ function Poster() {
         <div className="Poster_bg"></div>
         <div className="Poster_body">
             <div className="Poster_body_part_1">
-                <div className='Poster_header'>Farm-Fresh Goodness,<br /> Delivered to Your Doorstep</div>
-                <div className="Poster_info">Explore our curated marketplace, connecting you with passionate farmers dedicated to quality.</div>
-                <button className='btn_explore'>Explore Products</button>
+                <div className='Poster_header'>Level Up Your Game with Elite Gear</div>
+                <div className="Poster_info">Discover top-tier gaming accessories designed to enhance every aspect of your play..</div>
+                <button className='btn_explore'>Explore Categories</button>
             </div>
-            <div className="Poster_body_part_2"> <img src={Poster_image} alt="" height="100%"  /> </div>
+            <div className="Poster_body_part_2"> </div>
         </div>
         
     </div>

@@ -11,11 +11,9 @@
     left: 0;
     height: 100%;
     width: 100%;
-    background-image: url(../../../Images/HomePage_bg.jpg);
+    background-image: url(../../../Images/HomePage_bg.png);
     background-repeat: no-repeat;
     background-size: cover; 
-    filter: grayscale(100%);
-    opacity: 0.1;
     z-index: 0;
 }
 
@@ -40,19 +38,20 @@
     font-size: 6vh;
     line-height: 7vh;
     font-weight: bold;
+    color: rgb(178, 81, 81)
 }
 .Poster_info{
     font-size: 2vh;
     width: 23vw;
     margin-top: 3vh;
-    color: rgb(54, 51, 51);
+    color: rgb(255, 255, 255);
 }
 .btn_explore{
     width: fit-content;
-    background-color: #F47B34;
+    background-color: #ffffff;
     border-radius: 50px;
     margin-top: 3vh;
-    color: white;
+    color: #745C5C;
     padding: 1.15vh 2.5vw;
     border: 0px transparent solid;
 }

@@ -18,7 +18,7 @@ function FreshVegetables() {
                 const productsData = await Promise.all(
                     querySnapshot.docs.map(async (doc) => {
                         const product = { id: doc.id, ...doc.data() };
-                        const imageRef = ref(storage, `${product.name}.png`);
+                        const imageRef = ref(storage, `${product.name}.jpg`);
                         product.imageUrl = await getDownloadURL(imageRef);
                         return product;
                     })
@@ -62,7 +62,7 @@ function FreshVegetables() {
 
     return (
         <div className="FreshVegetables">
-            <div className="FreshVegetables_title">Fresh Vegetables</div>
+            <div className="FreshVegetables_title">Latest Equipments</div>
             <div className="Card_Products">
                 {products.map(product => (
                     <HomePageProducts
