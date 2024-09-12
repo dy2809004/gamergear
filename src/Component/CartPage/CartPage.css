@@ -45,7 +45,8 @@
     width: 55px;
     height: 55px;
     border-radius: 50%;
-    background-color: #F47B34;
+    
+    background-color: #91736B ;
     cursor: pointer;
     border: 0px solid rgb(255, 201, 201);
     transition-duration: 0.3s;
@@ -156,7 +157,7 @@
 }
 
 .btn:hover {
-  background: linear-gradient(0deg,#F47B34,#F47B34);
+  background: linear-gradient(0deg,#91736B,#91736B);
   box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.4),
   inset 0px -4px 0px 0px rgba(0, 0, 0, 0.2),
   0px 0px 0px 4px rgba(255, 255, 255, 0.2),

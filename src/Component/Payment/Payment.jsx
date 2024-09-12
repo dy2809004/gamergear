@@ -33,7 +33,7 @@ export default function Payment() {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          upiId: 'aryanmehta2649@okicici',
+          upiId: 'dheerya2809-1@okhdfcbank',
           amount: finalPrice.toFixed(2),
         }),
       });
@@ -59,7 +59,7 @@ export default function Payment() {
                 <h4 className="final-price">Payment Amount: {finalPrice.toFixed(2)} &#8377;</h4>
                 <div className="payment-option">
                     <h4 className='text-secondary'>Scan QR Code</h4>
-                    <QRCode value={`upi://pay?pa=aryanmehta2649@okicici&pn=Aryan Mehta&am=${finalPrice.toFixed(2)}&cu=INR`} className='qr_code'/>
+                    <QRCode value={`upi://pay?pa=dheerya2809-1@okhdfcbank&pn=Dheeraj Yadav&am=${finalPrice.toFixed(2)}&cu=INR`} className='qr_code'/>
                 </div>
         </div>
 

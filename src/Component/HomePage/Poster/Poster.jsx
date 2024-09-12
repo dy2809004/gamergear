@@ -1,6 +1,6 @@
 import React from 'react'
 import './Poster.css'
-import Poster_image from '../../../Images/Poster_image.png'
+// import Poster_image from '../../../Images/Poster_image.png'
 
 function Poster() {
   return (

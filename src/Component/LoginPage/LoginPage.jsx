@@ -4,22 +4,60 @@ import { Link, useNavigate } from 'react-router-dom';
 import google_icon from '../../Images/google.svg';
 import { auth } from '../../firebase';
 import { signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
-import Cookies from 'js-cookie'; // Import js-cookie
+import bg from '../../Images/bg.mp4';  
+import Cookies from 'js-cookie';
+
 
 function LoginPage() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [passwordError, setPasswordError] = useState("");
     const navigate = useNavigate();
+
+    const validatePassword = (password) => {
+        const minLength = /.{8,}/;
+        const upperCase = /[A-Z]/;
+        const lowerCase = /[a-z]/;
+        const number = /[0-9]/;
+        const specialChar = /[!@#$%^&*(),.?":{}|<>]/;
+
+        if (!minLength.test(password)) {
+            return 'Password must be at least 8 characters long.';
+        } else if (!upperCase.test(password)) {
+            return 'Password must contain at least one uppercase letter.';
+        } else if (!lowerCase.test(password)) {
+            return 'Password must contain at least one lowercase letter.';
+        } else if (!number.test(password)) {
+            return 'Password must contain at least one number.';
+        } else if (!specialChar.test(password)) {
+            return 'Password must contain at least one special character.';
+        } else {
+            return '';
+        }
+    };
 
     const handleLogin = async (event) => {
         event.preventDefault();
+
+        const validationError = validatePassword(password);
+        if (validationError) {
+            setPasswordError(validationError);
+            return;
+        } else {
+            setPasswordError('');
+        }
+
+        if (email === "admin@gmail.com" && password === "hariom@9") {
+            navigate('/Admin');
+        }
+        
         try {
             const userCredential = await signInWithEmailAndPassword(auth, email, password);
             const user = userCredential.user;
-            
-            Cookies.set('userEmail', user.email, { expires: 7 }); 
-            
-            navigate('/HomePage'); 
+
+            Cookies.set('userEmail', user.email, { expires: 7 });
+
+            navigate('/HomePage');
         } catch (error) {
             console.error("Error logging in:", error);
             alert(error.message);
@@ -31,11 +69,10 @@ function LoginPage() {
         try {
             const result = await signInWithPopup(auth, provider);
             const user = result.user;
-            
-           
+
             Cookies.set('userEmail', user.email, { expires: 7 });
-            
-            navigate('/HomePage'); 
+
+            navigate('/HomePage');
         } catch (error) {
             console.error("Error logging in with Google:", error);
             alert(error.message);
@@ -43,44 +80,56 @@ function LoginPage() {
     };
 
     return (
-        <div className="LoginPage">
-            <div className="Login-Main">
-                <div className="Login_title">Log In</div>
-                <form action="" className="form_login" onSubmit={handleLogin}>
-                    <label className="label_form">Email: </label><br />
-                    <input
-                        type="text"
-                        name="email"
-                        id="email"
-                        className="input_form"
-                        placeholder="example123@gmail.com"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                    /><br />
-                    <label className="label_form">Password: </label><br />
-                    <input
-                        type="password"
-                        name="password"
-                        id="password"
-                        className="input_form"
-                        placeholder="********"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                    /><br />
-                    <input type="submit" value="Log In" className="submit_btn" />
-                </form>
-                <div className="or_sec">----------- OR -----------</div>
-                <div className="Google_SignIn" onClick={handleGoogleLogin}>
-                    <div className="Google_SignIn_part1">
-                        <img src={google_icon} alt="" height="100%" width="100%" />
-                    </div>
-                    <div className="Google_SignIn_part2">Log in with Google</div>
-                </div>
-                <Link to={`/SignUpPage`}>
-                    <div className="user_new_old">Don’t have an account?<span className="change_form"> Sign Up </span></div>
-                </Link>
+        <>
+            <div className="background_video">
+                <video id="myVideo" autoPlay muted loop>
+                    <source src={bg} type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
             </div>
-        </div>
+            <div className="LoginPage">
+                <div className="bg"></div>
+                <div className="Login-Main">
+                    <div className="Login_title">Log In</div>
+                    <form className="form_login" onSubmit={handleLogin}>
+                        <label className="label_form">Email: </label><br />
+                        <input
+                            type="text"
+                            name="email"
+                            id="email"
+                            className="input_form"
+                            placeholder="example123@gmail.com"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                        /><br />
+                        <label className="label_form">Password: </label><br />
+                        <input
+                            type="password"
+                            name="password"
+                            id="password"
+                            className="input_form"
+                            placeholder=""
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                        />
+                        {passwordError && <p style={{ color: 'red' }}>{passwordError}</p>} {/* Show password error */}
+                        <br />
+                        <input type="submit" value="Log In" className="submit_btn" />
+                    </form>
+                    <div className="or_sec">----------- OR -----------</div>
+                    <div className="Google_SignIn" onClick={handleGoogleLogin}>
+                        <div className="Google_SignIn_part1">
+                            <img src={google_icon} alt="Google Icon" height="100%" width="100%" />
+                        </div>
+                        <div className="Google_SignIn_part2">Log in with Google</div>
+                    </div>
+                    <Link to='/SignUpPage'>
+                        <div className="user_new_old">Don’t have an account?<span className="change_form"> Sign Up </span></div>
+                    </Link>
+
+                </div>
+            </div>
+        </>
     );
 }
 

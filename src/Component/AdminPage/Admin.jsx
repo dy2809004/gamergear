@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import "./Admin.css";
 import { db, storage } from "../../firebase"; // assuming you have Firebase storage configured
 import { collection, addDoc } from "firebase/firestore";
-import { ref, uploadBytes, getDownloadURL } from "firebase/storage"; // for file uploads
-
+import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import bg from '../../Images/bg.mp4';  
 const Admin = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -33,7 +33,7 @@ const Admin = () => {
       
       // If a file is selected, upload it to Firebase Storage
       if (file) {
-        const storageRef = ref(storage, `products/${file.name}`);
+        const storageRef = ref(storage, `${file.name}`);
         const snapshot = await uploadBytes(storageRef, file);
         imageUrl = await getDownloadURL(snapshot.ref); // Get the file's URL
       }
@@ -61,7 +61,14 @@ const Admin = () => {
     }
   };
 
-  return (
+  return (<>
+        <div className="background_video">
+          <video id="myVideo" autoPlay muted loop>
+              <source src={bg} type="video/mp4" />
+              Your browser does not support the video tag.
+          </video>
+      </div>
+
     <div className="card2 d-flex align-items-center justify-content-center">
       <form onSubmit={handleSubmit} className="w-100">
         <>
@@ -138,6 +145,7 @@ const Admin = () => {
         </button>
       </form>
     </div>
+    </>
   );
 };
 
