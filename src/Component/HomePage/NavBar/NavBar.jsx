@@ -6,8 +6,11 @@ import { IoIosSearch } from "react-icons/io";
 import { FaShoppingCart } from "react-icons/fa";
 import Profile_Photo from '../../../Images/Profile_Photo.png'
 import logo from '../../../Images/logo.png'
+import Cookies from 'js-cookie';
 
 function NavBar() {
+  const email=Cookies.get("userEmail");
+  
   return (
     <div className="NavBar">
       <Link to={`/HomePage`}>
@@ -43,7 +46,7 @@ function NavBar() {
         </Link>
         <div className="profile_sec">
           <button className="profile_photo"> <img src={Profile_Photo} className="profile_icon" alt='P' height="100%" width="100%" /> </button>
-          <div className="profile_name">dheerajyadav6155@gmail.com</div>
+          <div className="profile_name">{email}</div>
         </div>
       </div>
     </div>
