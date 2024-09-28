@@ -3,6 +3,7 @@
     margin-top: 0.5rem;
     flex-wrap: wrap;
     justify-content: space-between;
+    background-color: #fbf0f4;
 }
 .cart-table {
     margin-left: 2.3rem;

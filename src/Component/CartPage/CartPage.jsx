@@ -29,7 +29,7 @@ function CartPage() {
     // Handle product removal and remove the corresponding cookie
     const handleRemove = (id) => {
         const item = cart.find(item => item.id === id);
-        if (item) {
+        if (item && item.quantity > 1) { // Prevent reduction below 1
             updateQuantity(id, item.quantity - 1);
         }
     };
