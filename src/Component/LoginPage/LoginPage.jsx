@@ -6,6 +6,7 @@ import { auth } from '../../firebase';
 import { signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import bg from '../../Images/bg.mp4';  
 import Cookies from 'js-cookie';
+import Forgot from '../Forgot/Forgot';
 
 
 function LoginPage() {
@@ -114,6 +115,7 @@ function LoginPage() {
                         />
                         {passwordError && <p style={{ color: 'red' }}>{passwordError}</p>} {/* Show password error */}
                         <br />
+                        <label className="label_form">Forgot Password? <Link to='/forgot'>Click Here</Link> </label><br />
                         <input type="submit" value="Log In" className="submit_btn" />
                     </form>
                     <div className="or_sec">----------- OR -----------</div>

@@ -8,6 +8,7 @@ import Footer from './Component/Footer/Footer';
 import Admin from './Component/AdminPage/Admin';
 import CartPage from './Component/CartPage/CartPage';
 import Payment from './Component/Payment/Payment';
+import Forgot from './Component/Forgot/Forgot';
 
 function App() {
     return (
@@ -22,6 +23,7 @@ function App() {
                     <Route path='/CartPage' element={<CartPage />} />
                     <Route path='/Admin' element={<Admin />} />
                     <Route path='/Payment' element={<Payment />} />
+                    <Route path='/Forgot' element={<Forgot />} />
                 </Routes>
             </BrowserRouter>
         </CartProvider>
