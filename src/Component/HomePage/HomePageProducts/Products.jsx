@@ -57,12 +57,26 @@ function Products() {
     };
 
     if (loading) {
-        return <div></div>;
+        return <div className="loader">
+        <div class="card2">
+          <div class="card__skeleton2 card__description2"></div>
+          <div class="card__skeleton2 card__title2">         </div>
+        </div>
+        <div class="card2">
+          <div class="card__skeleton2 card__description2"></div>
+          <div class="card__skeleton2 card__title2">         </div>
+        </div><div class="card2">
+          <div class="card__skeleton2 card__description2"></div>
+          <div class="card__skeleton2 card__title2">         </div>
+        </div><div class="card2">
+          <div class="card__skeleton2 card__description2"></div>
+          <div class="card__skeleton2 card__title2">         </div>
+        </div></div>;
     }
 
     return (
         <div className="Products">
-            <div className="Products_title">Latest Equipments</div>
+            <div className="Products_title">Latest Gadgets</div>
             <div className="Card_Products">
                 {products.map(product => (
                     <HomePageProducts

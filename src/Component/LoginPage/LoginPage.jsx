@@ -6,13 +6,12 @@ import { auth } from '../../firebase';
 import { signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import bg from '../../Images/bg.mp4';  
 import Cookies from 'js-cookie';
-import Forgot from '../Forgot/Forgot';
-
 
 function LoginPage() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [passwordError, setPasswordError] = useState("");
+    const [showPassword, setShowPassword] = useState(false); 
     const navigate = useNavigate();
 
     const validatePassword = (password) => {
@@ -48,15 +47,20 @@ function LoginPage() {
             setPasswordError('');
         }
 
-        if (email === "admin@gmail.com" && password === "hariom@9") {
+        if (email === "admin@gmail.com" && password === "Hariom@9") {
+            Cookies.set('userEmail', email); // Set cookie for admin
+            localStorage.setItem('userEmail', email);
             navigate('/Admin');
+            return;
         }
         
         try {
             const userCredential = await signInWithEmailAndPassword(auth, email, password);
             const user = userCredential.user;
 
-            Cookies.set('userEmail', user.email, { expires: 7 });
+            // Save user session in local storage and set cookie
+            Cookies.set('userEmail', user.email); // Set cookie
+            localStorage.setItem('userEmail', user.email);
 
             navigate('/HomePage');
         } catch (error) {
@@ -71,7 +75,9 @@ function LoginPage() {
             const result = await signInWithPopup(auth, provider);
             const user = result.user;
 
-            Cookies.set('userEmail', user.email, { expires: 7 });
+            // Save user session in local storage and set cookie
+            Cookies.set('userEmail', user.email); // Set cookie
+            localStorage.setItem('userEmail', user.email);
 
             navigate('/HomePage');
         } catch (error) {
@@ -104,16 +110,25 @@ function LoginPage() {
                             onChange={(e) => setEmail(e.target.value)}
                         /><br />
                         <label className="label_form">Password: </label><br />
-                        <input
-                            type="password"
-                            name="password"
-                            id="password"
-                            className="input_form"
-                            placeholder=""
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
-                        />
-                        {passwordError && <p style={{ color: 'red' }}>{passwordError}</p>} {/* Show password error */}
+                        <div style={{ position: 'relative' }}>
+                            <input
+                                type={showPassword ? 'text' : 'password'}
+                                name="password"
+                                id="password"
+                                className="input_form"
+                                placeholder=""
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                            />
+                            <button
+                                type="button"
+                                onClick={() => setShowPassword((prev) => !prev)}
+                                style={{ position: 'absolute', right: '10px', top: '50%', transform: 'translateY(-50%)', background: 'none', border: 'none', cursor: 'pointer' }}
+                            >
+                                {showPassword ? 'Hide' : 'Show'}
+                            </button>
+                        </div>
+                        {passwordError && <p style={{ color: 'red' }}>{passwordError}</p>}
                         <br />
                         <label className="label_form">Forgot Password? <Link to='/forgot'>Click Here</Link> </label><br />
                         <input type="submit" value="Log In" className="submit_btn" />
@@ -128,7 +143,6 @@ function LoginPage() {
                     <Link to='/SignUpPage'>
                         <div className="user_new_old">Don’t have an account?<span className="change_form"> Sign Up </span></div>
                     </Link>
-
                 </div>
             </div>
         </>

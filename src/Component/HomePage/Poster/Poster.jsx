@@ -10,7 +10,7 @@ function Poster() {
             <div className="Poster_body_part_1">
                 <div className='Poster_header'>Level Up Your Game with Elite Gear</div>
                 <div className="Poster_info">Discover top-tier gaming accessories designed to enhance every aspect of your play..</div>
-                <button className='btn_explore'>Explore Categories</button>
+                <button className='btn_explore'>Explore New Gadgets</button>
             </div>
             <div className="Poster_body_part_2"> </div>
         </div>

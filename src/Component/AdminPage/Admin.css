@@ -1,128 +1,37 @@
-/* Container for the form and card */
+.body {
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  background-color: #333;
+  padding: 1rem;
+}
+
+.navbar ul {
+  list-style-type: none;
+  display: flex;
+  gap: 20px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+}
+
+.form-container {
+  margin: 20px;
+}
+
 .card2 {
-  --bs-card-border-width: var(--bs-border-width);
-  --bs-card-border-color: var(--bs-border-color-translucent);
-  --bs-card-border-radius: var(--bs-border-radius);
-  --bs-card-box-shadow: ;
-  --bs-card-inner-border-radius: calc(var(--bs-border-radius) -(var(--bs-border-width)));
-  --bs-card-cap-bg: rgba(var(--bs-body-color-rgb), 0.03);
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-  height: var(--bs-card-height);
-  color: var(--bs-body-color);
-  word-wrap: break-word;
-  background-color: var(--bs-card-bg);
-  background-clip: border-box;
-  border: var(--bs-card-border-width) solid var(--bs-card-border-color);
-  border-radius: var(--bs-card-border-radius);
-  width: 90%;
-  max-width: 700px; /* Set a max-width to prevent it from becoming too wide */
-  margin: 2rem auto;
-  padding: 2rem;
-  background-color: #fbf0f4;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
 }
 
-.background_video {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 100vw;
-  z-index: -1;
-}
-
-#myVideo {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-}
-
-.form-title {
-  color: #000000;
-}
-
-.form-paragraph {
-  margin-top: 10px;
-  color: rgb(105, 105, 105);
-}
-
-/* Drop container for file input */
 .drop-container {
-  background-color: #fff;
-  display: flex;
-  gap: 10px;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
-  margin-top: 2.1875rem;
-  border-radius: 10px;
-  border: 2px dashed rgb(171, 202, 255);
-  color: #444;
-  cursor: pointer;
-  transition: background .2s ease-in-out, border .2s ease-in-out;
-}
-
-.drop-title {
-  color: #444;
+  border: 2px dashed #ccc;
+  padding: 20px;
   text-align: center;
-  transition: color .2s ease-in-out;
-}
-
-#file-input {
-  width: 100%;
-  max-width: 100%;
-  color: #444;
-  padding: 2px;
-  background: #fff;
-  border-radius: 10px;
-  border: 1px solid rgba(8, 8, 8, 0.288);
-}
-
-#file-input::file-selector-button {
-  margin-right: 20px;
-  border: none;
-  background: #084cdf;
-  padding: 10px 20px;
-  border-radius: 10px;
-  color: #fff;
-  cursor: pointer;
-  transition: background .2s ease-in-out;
-}
-
-#file-input::file-selector-button:hover {
-  background: #0d45a5;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .card2 {
-      width: 80%; /* Shrink the card on smaller screens */
-      padding: 1.5rem; /* Reduce padding */
-  }
-
-  #file-input::file-selector-button {
-      padding: 8px 16px; /* Reduce button padding */
-  }
-
-  .drop-container {
-      padding: 8px;
-  }
-}
-
-@media (max-width: 480px) {
-  .card2 {
-      width: 95%; /* Full width on very small screens */
-      padding: 1rem;
-  }
-
-  #file-input::file-selector-button {
-      padding: 6px 12px; /* Further reduce button padding */
-  }
-
-  .drop-container {
-      padding: 6px;
-  }
+  margin-bottom: 20px;
 }

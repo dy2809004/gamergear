@@ -1,0 +1,38 @@
+.UserDashboard {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.UserDashboard h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.UserDashboard h3 {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.UserDashboard p {
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
+}
+
+.UserDashboard strong {
+    font-weight: bold;
+}
+
+.UserDashboard ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.UserDashboard li {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+}

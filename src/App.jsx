@@ -9,6 +9,9 @@ import Admin from './Component/AdminPage/Admin';
 import CartPage from './Component/CartPage/CartPage';
 import Payment from './Component/Payment/Payment';
 import Forgot from './Component/Forgot/Forgot';
+import ProtectedRoute from './Component/ProtectedRoute/ProtectedRoute';
+import UserProfile from './Component/UserProfile/UserProfile';
+import UserDashboard from './Component/UserDashboard/UserDashboard';
 
 function App() {
     return (
@@ -24,6 +27,9 @@ function App() {
                     <Route path='/Admin' element={<Admin />} />
                     <Route path='/Payment' element={<Payment />} />
                     <Route path='/Forgot' element={<Forgot />} />
+                    <Route path='/ProtectedRoute' element={<ProtectedRoute />} />
+                    <Route path='/UserProfile' element={<UserProfile />} />
+                    <Route path='/UserDashboard' element={<UserDashboard />} />                   
                 </Routes>
             </BrowserRouter>
         </CartProvider>
