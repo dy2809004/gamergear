@@ -1,0 +1,128 @@
+/* Help.css */
+
+.help-container {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #ffffff; /* White background for a clean look */
+    border-radius: 8px; /* Slightly rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+.help-title {
+    font-size: 2.5rem; /* Main title font size */
+    color: #91736B; /* Main color for consistency */
+    text-align: center; /* Center the title */
+}
+
+.help-intro {
+    font-size: 1.2rem;
+    color: #666; /* Gray color for intro text */
+    margin-bottom: 20px; /* Space below the intro */
+    text-align: center; /* Center intro text */
+}
+
+.help-section {
+    margin-bottom: 30px; /* Space between sections */
+}
+
+.section-title {
+    font-size: 1.8rem;
+    color: #91736B;
+    margin-bottom: 10px; /* Space below the title */
+}
+
+ul {
+    list-style-type: none; /* Remove default list style */
+    padding: 0; /* Remove padding */
+}
+
+li {
+    margin-bottom: 10px; /* Space between list items */
+}
+
+a {
+    color: #91736B; /* Link color */
+    text-decoration: underline; /* Underline links */
+}
+
+a:hover {
+    text-decoration: none; /* Remove underline on hover */
+}
+
+.faq-list p,
+.support-list p,
+.shipping-list p,
+.tips-list p {
+    margin-left: 20px; /* Indent paragraphs under list items */
+    color: #555; /* Slightly darker gray for better readability */
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .help-container {
+        padding: 15px; /* Reduced padding on smaller screens */
+    }
+
+    .help-title {
+        font-size: 2.2rem; /* Slightly smaller title */
+    }
+
+    .help-intro {
+        font-size: 1.1rem; /* Reduced intro text size */
+    }
+
+    .section-title {
+        font-size: 1.6rem; /* Reduced section title size */
+    }
+}
+
+@media (max-width: 768px) {
+    .help-container {
+        padding: 10px; /* Further reduced padding */
+    }
+
+    .help-title {
+        font-size: 2rem; /* Smaller title for tablets */
+    }
+
+    .help-intro {
+        font-size: 0.9rem; /* Smaller intro text for tablets */
+    }
+
+    .section-title {
+        font-size: 1.5rem; /* Smaller section title for tablets */
+    }
+
+    .faq-list p,
+    .support-list p,
+    .shipping-list p,
+    .tips-list p {
+        margin-left: 10px; /* Further reduced indentation */
+    }
+}
+
+@media (max-width: 480px) {
+    .help-container {
+        padding: 5px; /* Minimal padding on very small screens */
+    }
+
+    .help-title {
+        font-size: 1.5rem; /* Smaller title for mobile */
+    }
+
+    .help-intro {
+        font-size: 0.8rem; /* Smaller intro text for mobile */
+    }
+
+    .section-title {
+        font-size: 1.3rem; /* Smaller section title for mobile */
+    }
+
+    .faq-list p,
+    .support-list p,
+    .shipping-list p,
+    .tips-list p {
+        margin-left: 0; /* Remove indentation */
+    }
+}

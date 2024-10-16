@@ -1,4 +1,7 @@
+// UserDashboard.js
+
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { db } from '../../firebase'; // Your Firebase config
 import { doc, getDoc, collection, query, where, getDocs } from 'firebase/firestore';
 import Cookies from 'js-cookie';
@@ -7,9 +10,17 @@ import './UserDashboard.css';
 const UserDashboard = () => {
     const [userData, setUserData] = useState(null);
     const [purchases, setPurchases] = useState([]);
+    const [paymentHistory, setPaymentHistory] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState('');
     const userEmail = Cookies.get("userEmail");
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if (!userEmail) {
+            navigate('/'); // Redirect to login page if userEmail is not present
+        }
+    }, [userEmail, navigate]);
 
     useEffect(() => {
         const fetchUserData = async () => {
@@ -39,7 +50,7 @@ const UserDashboard = () => {
                     const querySnapshot = await getDocs(q);
                     const purchaseList = [];
                     querySnapshot.forEach((doc) => {
-                        purchaseList.push(...doc.data().products);
+                        purchaseList.push(...doc.data().products); // Extracting products from purchase data
                     });
                     setPurchases(purchaseList);
                 } catch (error) {
@@ -49,14 +60,37 @@ const UserDashboard = () => {
             }
         };
 
+        const fetchPaymentHistory = async () => {
+            if (userEmail) {
+                const paymentsRef = collection(db, 'payments');
+                const q = query(paymentsRef, where("email", "==", userEmail));
+                try {
+                    const querySnapshot = await getDocs(q);
+                    const paymentList = [];
+                    querySnapshot.forEach((doc) => {
+                        paymentList.push(doc.data());
+                    });
+                    setPaymentHistory(paymentList);
+                } catch (error) {
+                    console.error("Error fetching payment history: ", error);
+                    setError("Error fetching payment history.");
+                }
+            }
+        };
+
         const fetchData = async () => {
             await fetchUserData();
             await fetchUserPurchases();
+            await fetchPaymentHistory();
             setLoading(false);
         };
 
         fetchData();
     }, [userEmail]);
+
+    const handleBackToHome = () => {
+        navigate('/HomePage'); // Redirect to the HomePage
+    };
 
     if (loading) return <div>Loading...</div>;
     if (error) return <div>{error}</div>;
@@ -78,17 +112,38 @@ const UserDashboard = () => {
                         <ul>
                             {purchases.map((product, index) => (
                                 <li key={index}>
-                                    {product.name} - ${product.price} on {product.date}
+                                    {product.name} - ₹{product.price} on {new Date(product.date).toLocaleDateString()}
                                 </li>
                             ))}
                         </ul>
                     ) : (
                         <p>No purchase history available.</p>
                     )}
+
+                    <h3>Payment History</h3>
+                    {paymentHistory.length > 0 ? (
+                        <ul>
+                            {paymentHistory.map((payment, index) => (
+                                <li key={index}>
+                                    {payment.method} - ₹{payment.amount} on {new Date(payment.date).toLocaleDateString()} (Status: {payment.status})
+                                </li>
+                            ))}
+                        </ul>
+                    ) : (
+                        <p>No payment history available.</p>
+                    )}
                 </div>
             ) : (
                 <p>No user data available.</p>
             )}
+
+            {/* Back to Home Button */}
+            <button 
+                className="back-to-home-btn" 
+                onClick={handleBackToHome}
+            >
+                Back to Home
+            </button>
         </div>
     );
 };

@@ -1,0 +1,85 @@
+.about-container {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #ffffff; /* White background for a clean look */
+    border-radius: 8px; /* Slightly rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+.about-title {
+    font-size: 2.5rem; /* Main title font size */
+    color: #91736B; /* Main color for consistency */
+    text-align: center; /* Center the title */
+}
+
+.about-intro {
+    font-size: 1.2rem;
+    color: #666; /* Gray color for intro text */
+    margin-bottom: 20px; /* Space below the intro */
+    text-align: center; /* Center intro text */
+}
+
+.about-section {
+    margin-bottom: 30px; /* Space between sections */
+}
+
+.about-section h2 {
+    font-size: 1.8rem;
+    color: #91736B;
+    margin-bottom: 10px; /* Space below the title */
+}
+
+.about-list {
+    list-style-type: disc; /* Disc style for list */
+    padding-left: 20px; /* Indent list */
+}
+
+.about-list li {
+    margin-bottom: 10px; /* Space between list items */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .about-container {
+        padding: 15px; /* Reduced padding on smaller screens */
+    }
+
+    .about-title {
+        font-size: 2rem; /* Slightly smaller title */
+    }
+
+    .about-intro {
+        font-size: 1rem; /* Reduced intro text size */
+    }
+
+    .about-section h2 {
+        font-size: 1.5rem; /* Reduced section title size */
+    }
+
+    .about-section {
+        margin-bottom: 20px; /* Reduced space between sections */
+    }
+}
+
+@media (max-width: 480px) {
+    .about-container {
+        padding: 10px; /* Further reduced padding on very small screens */
+    }
+
+    .about-title {
+        font-size: 1.8rem; /* Smaller title for mobile */
+    }
+
+    .about-intro {
+        font-size: 0.9rem; /* Smaller intro text for mobile */
+    }
+
+    .about-section h2 {
+        font-size: 1.3rem; /* Smaller section title for mobile */
+    }
+
+    .about-list {
+        padding-left: 15px; /* Reduced indentation on mobile */
+    }
+}

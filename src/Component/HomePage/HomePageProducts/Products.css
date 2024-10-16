@@ -2,7 +2,6 @@
 .Products {
     padding: 5vh 5vw;
     background-color: #fbf0f4;
-    
 }
 
 .Products_title {
@@ -26,7 +25,7 @@
 .card {
     width: 20.5rem;
     margin-bottom: 3vh;
-    padding: 5vh 1vw ;
+    padding: 5vh 1vw;
     height: initial;
     display: flex;
     flex-direction: column;
@@ -122,7 +121,7 @@
 
 .add_to_cart_btn {
     border: 0px transparent solid;
-    background-color: #fff ;
+    background-color: #fff;
     color: #91736B;
     border-radius: 50px;
     font-size: 2vh;
@@ -172,4 +171,83 @@
 
 .success__close path {
     fill: white;
+}
+
+/* Responsive Styles */
+@media only screen and (max-width: 1200px) {
+    .Card_Products {
+        justify-content: center; /* Center the cards */
+    }
+
+    .card {
+        width: 45%; /* Adjust card width for medium screens */
+        margin-bottom: 2vh; /* Reduce bottom margin */
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .Products {
+        padding: 3vh 2vw; /* Adjust padding */
+    }
+
+    .Products_title {
+        font-size: 2.5vh; /* Reduce title size */
+        margin-bottom: 2vh; /* Reduce margin */
+    }
+
+    .Card_Products {
+        flex-direction: column; /* Stack cards vertically */
+        align-items: center; /* Center align cards */
+    }
+
+    .card {
+        width: 90%; /* Make cards full width on small screens */
+        padding: 3vh 1vw; /* Reduce padding */
+    }
+
+    .card_product_image {
+        height: 15vh; /* Adjust image height */
+    }
+
+    .card_product_name {
+        font-size: 2vh; /* Reduce font size */
+    }
+
+    .product_quantity {
+        width: 7rem; /* Reduce width of product quantity */
+    }
+
+    .quantity_btn {
+        width: 2.5rem; /* Adjust button width */
+        font-size: 2vh; /* Reduce button font size */
+    }
+
+    .add_to_cart_btn {
+        font-size: 1.5vh; /* Reduce button font size */
+        padding: 0.5vh 0.5vw; /* Reduce padding */
+    }
+
+    .success {
+        width: 90%; /* Make success message full width */
+        right: 0; /* Position message at the bottom */
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .Products_title {
+        font-size: 2vh; /* Further reduce title size */
+    }
+
+    .card_product_category {
+        font-size: 1.2vh; /* Adjust category font size */
+    }
+
+    .card_product_real_price,
+    .card_product_discount_price {
+        font-size: 1.5vh; /* Reduce price font sizes */
+    }
+
+    .success {
+        width: 100%; /* Full width for success message */
+    }
 }

@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { Link, useNavigate } from 'react-router-dom';
 import google_icon from '../../Images/google.svg';
 import { auth } from '../../firebase';
-import { signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, sendPasswordResetEmail } from "firebase/auth";
+import { sendPasswordResetEmail } from "firebase/auth";
 import bg from '../../Images/bg.mp4';
-import Cookies from 'js-cookie';
+
 function Forgot() {
     const [email, setEmail] = useState("");
     const [message, setMessage] = useState(""); // State to hold success or error message
@@ -14,7 +14,13 @@ function Forgot() {
         event.preventDefault();
         try {
             await sendPasswordResetEmail(auth, email);
-            setMessage("Check your email for a password reset link."); // Set success message
+            alert("Password reset email sent successfully."); // Show alert popup
+
+            // Redirect to the login page after a short delay
+            setTimeout(() => {
+                navigate('/');
+            }, 2000); // Redirect after 2 seconds
+
             setEmail(""); // Clear the email input field
         } catch (error) {
             console.log(error);
@@ -45,9 +51,9 @@ function Forgot() {
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                         />
-<input type="submit" value="Submit" className="submit_btn" />
+                        <input type="submit" value="Submit" className="submit_btn" />
                     </form>
-                    {message && <p style={{ color: 'green' }}>{message}</p>} {/* Show success/error message */}
+                    {message && <p style={{ color: 'red' }}>{message}</p>} {/* Show error message */}
                     <Link to='/'>
                         <div className="user_new_old"><span className="change_form"> Go Back</span></div>
                     </Link>

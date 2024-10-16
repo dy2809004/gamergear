@@ -1,0 +1,18 @@
+.search-results {
+    padding: 20px;
+  }
+  
+  .search-results h2 {
+    margin-bottom: 20px;
+  }
+  
+  .search-results ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .search-results li {
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+  }

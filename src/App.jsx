@@ -12,6 +12,9 @@ import Forgot from './Component/Forgot/Forgot';
 import ProtectedRoute from './Component/ProtectedRoute/ProtectedRoute';
 import UserProfile from './Component/UserProfile/UserProfile';
 import UserDashboard from './Component/UserDashboard/UserDashboard';
+import SearchResults from './Component/SearchResults/SearchResults';
+import HelpPage from './Component/HelpPage/HelpPage';
+import AboutUs from './Component/AboutUs/AboutUs';
 
 function App() {
     return (
@@ -29,7 +32,11 @@ function App() {
                     <Route path='/Forgot' element={<Forgot />} />
                     <Route path='/ProtectedRoute' element={<ProtectedRoute />} />
                     <Route path='/UserProfile' element={<UserProfile />} />
-                    <Route path='/UserDashboard' element={<UserDashboard />} />                   
+                    <Route path='/UserDashboard' element={<UserDashboard />} />
+                    <Route path='/SearchResults' element={<SearchResults />} />
+                    <Route path='/HelpPage' element={<HelpPage />} />
+                    <Route path='/AboutUs' element={<AboutUs />} />
+
                 </Routes>
             </BrowserRouter>
         </CartProvider>

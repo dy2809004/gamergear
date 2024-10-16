@@ -1,43 +1,104 @@
+/* General Container Styling */
 .UserProfile {
-    max-width: 600px;
-    margin: 2rem auto;
+    max-width: 700px;
+    margin: 3rem auto;
     padding: 2rem;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    background: linear-gradient(135deg, #fbf0f4, #f0e6eb);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    font-family: 'Helvetica Neue', sans-serif;
+    color: #4a4a4a;
 }
 
+/* Title Styling */
 .UserProfile h2 {
     text-align: center;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
+    color: #91736B;
+    font-size: 2rem;
+    letter-spacing: 1px;
+    font-weight: 600;
 }
 
+/* Form Styling */
 .UserProfile form {
     display: flex;
     flex-direction: column;
+    gap: 1.5rem;
 }
 
 .form_group {
-    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 }
 
-label {
-    margin-bottom: 0.5rem;
-    font-weight: bold;
-}
-
+/* Input Fields and Select */
 input[type="text"],
 input[type="tel"],
 select {
-    padding: 0.5rem;
+    padding: 0.75rem;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 6px;
+    font-size: 1rem;
+    background-color: #f8f8f8;
+    transition: border 0.3s, box-shadow 0.3s;
 }
 
+input[type="text"]:focus,
+input[type="tel"]:focus,
+select:focus {
+    border: 1px solid #91736B;
+    box-shadow: 0 0 5px rgba(145, 115, 107, 0.5);
+}
 
+/* Message Styling */
 .message {
     text-align: center;
-    color: green;
+    color: #28a745;
+    margin-top: 1.5rem;
+    font-weight: bold;
+}
+
+/* Buttons Styling */
+.small-button,
+.logout_btn {
     margin-top: 1rem;
+    padding: 0.75rem 1.2rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.small-button {
+    background-color: #91736B;
+    color: white;
+    margin-right: 10px;
+    
+}
+
+.small-button:hover {
+    background-color: #70524b;
+    color: wheat;
+
+}
+
+.logout_btn {
+    background-color: #dc3545;
+    color: white;
+    margin-left: 0.1rem;
+}
+
+.logout_btn:hover {
+    background-color: #c82333;
+}
+
+/* Error Styling */
+.error {
+    color: red;
+    text-align: center;
+    margin-top: 1rem;
+    font-weight: bold;
 }

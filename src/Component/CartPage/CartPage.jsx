@@ -4,9 +4,19 @@ import './CartPage.css';
 import { CartContext } from '../../CartContext';
 import { Link } from 'react-router-dom';
 import Cookies from 'js-cookie'; // Import js-cookie
+import { useNavigate } from 'react-router-dom';
 
 function CartPage() {
     const { cart, updateQuantity, setCart, finalPrice, setFinalPrice } = useContext(CartContext);
+
+    const userEmail = Cookies.get("userEmail");
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if (!userEmail) {
+            navigate('/'); // Redirect to login page if userEmail is not present
+        }
+    }, [userEmail, navigate]);
 
     // Save individual products in cookies whenever the cart changes
     useEffect(() => {
@@ -29,8 +39,12 @@ function CartPage() {
     // Handle product removal and remove the corresponding cookie
     const handleRemove = (id) => {
         const item = cart.find(item => item.id === id);
-        if (item && item.quantity > 1) { // Prevent reduction below 1
-            updateQuantity(id, item.quantity - 1);
+        if (item) {
+            if (item.quantity > 1) {
+                updateQuantity(id, item.quantity - 1);
+            } else {
+                deleteFromCart(id); // Remove item if quantity is 1
+            }
         }
     };
 
@@ -43,7 +57,11 @@ function CartPage() {
 
     const handleQuantityChange = (id, value) => {
         const quantity = parseInt(value) || 0;
-        updateQuantity(id, quantity);
+        if (quantity <= 0) {
+            deleteFromCart(id); // Remove item if quantity is 0
+        } else {
+            updateQuantity(id, quantity);
+        }
     };
 
     const deleteFromCart = (id) => {
@@ -146,6 +164,7 @@ function CartPage() {
                                         </td>
                                     </tr>
                                 ))}
+
                             </tbody>
                         )}
                     </table>
@@ -169,11 +188,19 @@ function CartPage() {
                         <div className="cartSummary_total_title"> Total : </div> 
                         <div className="cartSummary_total_Summary">{finalPrice.toFixed(2)} &#8377;</div>
                     </div>
-                    <Link to={`/Payment`} className='link_payment' >
-                        <button className="btn">
+                    
+                    {cart.length > 0 ? (
+                        <Link to={`/Payment`} className='link_payment'>
+                            <button className="btn">
+                                <span className="text">Proceed To Checkout</span>
+                            </button>
+                        </Link>
+                    ) : (
+                        <button className="btn" disabled>
                             <span className="text">Proceed To Checkout</span>
                         </button>
-                    </Link>
+                    )}
+                    {cart.length === 0 && <p>Please add items to the cart to proceed.</p>}
                 </div>
             </div>
         </div>

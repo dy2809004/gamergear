@@ -14,9 +14,9 @@ function NavBar() {
   return (
     <div className="NavBar">
       <Link to="/HomePage">
-          <div className="logo">
-            <img src={logo} alt="" height="100%" width="100%" />
-          </div>
+        <div className="logo">
+          <img src={logo} alt="" height="100%" width="100%" />
+        </div>
       </Link>
       <div className="InputContainer">
         <input
@@ -44,7 +44,9 @@ function NavBar() {
               <img src={Profile_Photo} className="profile_icon" alt='P' height="100%" width="100%" />
             </button>
           </Link>
-          <div className="profile_name">{email}</div>
+          <Link to="/UserProfile"> {/* Make profile name clickable */}
+            <div className="profile_name">{email}</div>
+          </Link>
         </div>
       </div>
     </div>

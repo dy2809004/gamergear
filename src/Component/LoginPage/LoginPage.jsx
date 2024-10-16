@@ -4,15 +4,31 @@ import { Link, useNavigate } from 'react-router-dom';
 import google_icon from '../../Images/google.svg';
 import { auth } from '../../firebase';
 import { signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
-import bg from '../../Images/bg.mp4';  
+import bg from '../../Images/bg.mp4';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEye, faEyeSlash } from '@fortawesome/free-regular-svg-icons';
+import { library } from '@fortawesome/fontawesome-svg-core';
 import Cookies from 'js-cookie';
+
+// Add icons to the library
+library.add(faEye, faEyeSlash);
 
 function LoginPage() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [emailError, setEmailError] = useState("");
     const [passwordError, setPasswordError] = useState("");
     const [showPassword, setShowPassword] = useState(false); 
     const navigate = useNavigate();
+
+    const validateEmail = (email) => {
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(email)) {
+            return 'Please enter a valid email address.';
+        } else {
+            return '';
+        }
+    };
 
     const validatePassword = (password) => {
         const minLength = /.{8,}/;
@@ -39,9 +55,17 @@ function LoginPage() {
     const handleLogin = async (event) => {
         event.preventDefault();
 
-        const validationError = validatePassword(password);
-        if (validationError) {
-            setPasswordError(validationError);
+        const emailValidationError = validateEmail(email);
+        if (emailValidationError) {
+            setEmailError(emailValidationError);
+            return;
+        } else {
+            setEmailError('');
+        }
+
+        const passwordValidationError = validatePassword(password);
+        if (passwordValidationError) {
+            setPasswordError(passwordValidationError);
             return;
         } else {
             setPasswordError('');
@@ -109,6 +133,7 @@ function LoginPage() {
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                         /><br />
+                        {emailError && <p style={{ color: 'red' }}>{emailError}</p>}
                         <label className="label_form">Password: </label><br />
                         <div style={{ position: 'relative' }}>
                             <input
@@ -123,9 +148,17 @@ function LoginPage() {
                             <button
                                 type="button"
                                 onClick={() => setShowPassword((prev) => !prev)}
-                                style={{ position: 'absolute', right: '10px', top: '50%', transform: 'translateY(-50%)', background: 'none', border: 'none', cursor: 'pointer' }}
+                                style={{
+                                    position: 'absolute',
+                                    right: '10px',
+                                    top: '50%',
+                                    transform: 'translateY(-50%)',
+                                    background: 'none',
+                                    border: 'none',
+                                    cursor: 'pointer'
+                                }}
                             >
-                                {showPassword ? 'Hide' : 'Show'}
+                                <FontAwesomeIcon icon={showPassword ? faEye : faEyeSlash} className="mt-3" />
                             </button>
                         </div>
                         {passwordError && <p style={{ color: 'red' }}>{passwordError}</p>}
