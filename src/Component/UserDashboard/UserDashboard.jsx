@@ -91,6 +91,9 @@ const UserDashboard = () => {
     const handleBackToHome = () => {
         navigate('/HomePage'); // Redirect to the HomePage
     };
+    const handleBackToUserProfile = () => {
+        navigate('/UserProfile'); // Redirect to the UserProfile
+    };
 
     if (loading) return <div>Loading...</div>;
     if (error) return <div>{error}</div>;
@@ -105,7 +108,7 @@ const UserDashboard = () => {
                     <p><strong>Email:</strong> {userData.email}</p>
                     <p><strong>Phone:</strong> {userData.phone}</p>
                     <p><strong>Address:</strong> {userData.address}</p>
-                    <p><strong>Gender:</strong> {userData.gender}</p>
+                    <p className='text-capitalize'><strong>Gender:</strong> {userData.gender}</p>
                     
                     <h3>Purchase History</h3>
                     {purchases.length > 0 ? (
@@ -138,12 +141,20 @@ const UserDashboard = () => {
             )}
 
             {/* Back to Home Button */}
+            <div className='d-flex flex-row gap-3'>
+            <button 
+                className="back-to-home-btn" 
+                onClick={handleBackToUserProfile}
+            >
+                Back to User Profile
+            </button>
             <button 
                 className="back-to-home-btn" 
                 onClick={handleBackToHome}
             >
                 Back to Home
             </button>
+            </div>
         </div>
     );
 };

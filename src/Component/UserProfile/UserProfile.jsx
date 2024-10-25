@@ -1,11 +1,10 @@
-// UserProfile.js
-
 import { React, useEffect, useState } from "react";
 import { db } from '../../firebase'; // Your Firebase config
 import { doc, getDoc, setDoc } from 'firebase/firestore';
 import Cookies from 'js-cookie';
 import { useNavigate } from 'react-router-dom';
 import './UserProfile.css';
+import { width } from "@fortawesome/free-brands-svg-icons/fa42Group";
 
 const UserProfile = () => {
     const [name, setName] = useState('');
@@ -129,18 +128,16 @@ const UserProfile = () => {
                         <option value="other">Other</option>
                     </select>
                 </div>
-                <button type="submit">Update Profile</button>
+                <button type="submit" className="small-button" style={{ width: '50%', marginLeft: '25%' }}>
+                    Update Profile
+                </button>
             </form>
             {error && <p className="error">{error}</p>}
             {message && <p className="message">{message}</p>}
 
             {/* Go to Dashboard Button */}
-            <button 
-                className="small-button" 
-                onClick={() => navigate('/UserDashboard')}
-            >
-                Go to Dashboard
-            </button>
+            <div style={{marginLeft: '18%' }}>
+            
 
             {/* Back to Home Button */}
             <button 
@@ -149,13 +146,18 @@ const UserProfile = () => {
             >
                 Back to Home
             </button>
-
+            <button 
+                className="small-button" 
+                onClick={() => navigate('/UserDashboard')}
+            >
+                Go to Dashboard
+            </button>
             <button 
                 className="logout_btn" 
                 onClick={onLogout}
             >
                 Logout
-            </button>
+            </button></div>
         </div>
     );
 };

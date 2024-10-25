@@ -136,7 +136,7 @@ export default function Payment() {
 
             setShowSuccessModal(true);
             setTimeout(() => {
-                navigate('/'); // Redirect to Home Page after payment success
+                navigate('/HomePage'); // Redirect to Home Page after payment success
             }, 2000); // Delay for 2 seconds to show the success modal
         }
     };

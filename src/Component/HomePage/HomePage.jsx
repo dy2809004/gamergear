@@ -10,6 +10,7 @@ function HomePage() {
 
     const userEmail = Cookies.get("userEmail");
     const navigate = useNavigate();
+    
 
     useEffect(() => {
         if (!userEmail) {
